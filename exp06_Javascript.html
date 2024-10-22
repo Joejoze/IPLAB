@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables and More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7ff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Variables, Operators, and More</h1>
+    
+    <!-- Section for Variables and Operators -->
+    <h2>Variables and Operators</h2>
+    <p id="variables-result">Click the button to see a basic operation:</p>
+    <button onclick="showVariableOperations()">Show Variables & Operators</button>
+
+    <!-- Section for Conditions -->
+    <h2>Conditions</h2>
+    <p id="condition-result">Check if a number is even or odd:</p>
+    <input type="number" id="number-input" placeholder="Enter a number">
+    <button onclick="checkEvenOdd()">Check Even/Odd</button>
+
+    <!-- Section for Loops -->
+    <h2>Loops</h2>
+    <p>Display numbers from 1 to 10:</p>
+    <button onclick="showLoop()">Show Loop</button>
+    <p id="loop-result"></p>
+
+    <!-- Section for Functions -->
+    <h2>Functions</h2>
+    <p>Calculate the square of a number:</p>
+    <input type="number" id="square-input" placeholder="Enter a number">
+    <button onclick="calculateSquare()">Calculate Square</button>
+    <p id="square-result"></p>
+
+    <!-- Section for Events -->
+    <h2>Events</h2>
+    <button id="event-button">Hover or Click Me</button>
+    <p id="event-result"></p>
+
+    <!-- Section for Classes and Objects -->
+    <h2>Classes and Objects</h2>
+    <button onclick="showObjectDetails()">Create Object</button>
+    <p id="object-result"></p>
+
+    <script>
+        // Variables and Operators Example
+        function showVariableOperations() {
+            let x = 10;
+            let y = 5;
+            let result = x + y;
+            document.getElementById('variables-result').innerText = 'x = ' + x + ', y = ' + y + ' => x + y = ' + result;
+        }
+
+        // Conditions Example
+        function checkEvenOdd() {
+            let num = document.getElementById('number-input').value;
+            let result = (num % 2 === 0) ? num + ' is Even' : num + ' is Odd';
+            document.getElementById('condition-result').innerText = result;
+        }
+
+        // Loops Example
+        function showLoop() {
+            let result = '';
+            for (let i = 1; i <= 10; i++) {
+                result += i + ' ';
+            }
+            document.getElementById('loop-result').innerText = result;
+        }
+
+        // Functions Example
+        function calculateSquare() {
+            let num = document.getElementById('square-input').value;
+            let square = num * num;
+            document.getElementById('square-result').innerText = 'Square of ' + num + ' is ' + square;
+        }
+
+        // Events Example
+        let eventButton = document.getElementById('event-button');
+        eventButton.addEventListener('mouseover', function() {
+            document.getElementById('event-result').innerText = 'Mouseover Event Triggered!';
+        });
+        eventButton.addEventListener('click', function() {
+            document.getElementById('event-result').innerText = 'Click Event Triggered!';
+        });
+
+        // Classes and Objects Example
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            introduce() {
+                return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+            }
+        }
+
+        function showObjectDetails() {
+            let person = new Person('Rhugved Mane', 20);
+            document.getElementById('object-result').innerText = person.introduce();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Page using CSS3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* Light background */
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333; /* Darker text color */
+            text-align: center;
+        }
+        nav {
+            background-color: #333; /* Dark background for nav */
+            color: white;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0;
+            text-align: center; /* Center align the list */
+        }
+        nav ul li {
+            display: inline; /* Align items side by side */
+            margin: 0 15px; /* Space between items */
+        }
+        nav a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        nav a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        table {
+            width: 80%; /* Set width of the table */
+            margin: 20px auto; /* Center the table */
+            border-collapse: collapse; /* Merge borders */
+            background-color: white; /* White background for the table */
+        }
+        th, td {
+            border: 1px solid #ccc; /* Border color */
+            padding: 10px; /* Cell padding */
+            text-align: center; /* Center text in cells */
+        }
+        th {
+            background-color: #f2f2f2; /* Light grey background for headers */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light background for even rows */
+        }
+        tr:hover {
+            background-color: #e0e0e0; /* Highlight row on hover */
+        }
+        .important {
+            font-weight: bold; /* Bold text for important information */
+            color: rgb(0, 0, 0); /* Red color for emphasis */
+        }
+        .special {
+            text-transform: uppercase; /* Uppercase text */
+            color: rgb(0, 0, 0); /* Blue color for special text */
+        }
+        .contact {
+            position: relative; /* Enable positioning for pseudo-elements */
+        }
+        .contact::before {
+            content: "📞 "; /* Add a phone icon before the contact section */
+            font-size: 1.5em; /* Increase icon size */
+            position: absolute; /* Position it relative to the contact section */
+            left: -25px; /* Adjust position */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Basic Web Page</h1>
+
+    <nav>
+        <h2>Navigation Menu</h2>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="about">About Me</h2>
+    <p align="center"> I am a web development enthusiast learning HTML5 and CSS3.</p>
+
+    <h2>My Hobbies</h2>
+    <ol>
+        <li>Reading</li>
+        <li>Coding</li>
+        <li>Traveling</li>
+    </ol>
+
+    <h2>My Academic Records</h2>
+    <table>
+        <tr>
+            <th>Education</th>
+            <th>Percentage</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td>SSC</td>
+            <td class="important">79.40</td>
+            <td>2020</td>
+        </tr>
+        <tr>
+            <td>HSC</td>
+            <td class="important">57.40</td>
+            <td>2022</td>
+        </tr>
+        <tr>
+            <td>Bachelors in Engineering</td>
+            <td class="special">6.5 CGPA</td>
+            <td>Pursuing</td>
+        </tr>
+    </table>
+
+    <h2 id="gallery">Gallery</h2>
+    <p>Images will be added here later.</p>
+
+    <h2 id="contact" class="contact">Contact Me</h2>
+    <p>Feel free to reach out!</p>
+
+</body>
+</html>

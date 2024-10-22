@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Validations, Arrays, String, and Date Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>JavaScript Validations, Arrays, String, and Date Functions</h1>
+
+        <!-- Form Validation Section -->
+        <h2>Form Validation</h2>
+        <form id="myForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob">
+
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+        <p id="validation-message" class="error"></p>
+
+        <!-- Arrays Example -->
+        <h2>Arrays</h2>
+        <button onclick="showArray()">Show Array</button>
+        <p id="array-result"></p>
+
+        <!-- String Manipulation Example -->
+        <h2>String Manipulation</h2>
+        <input type="text" id="string-input" placeholder="Enter a string">
+        <button onclick="stringOperations()">Manipulate String</button>
+        <p id="string-result"></p>
+
+        <!-- Date Function Example -->
+        <h2>Date Function</h2>
+        <button onclick="showCurrentDate()">Show Current Date</button>
+        <p id="date-result"></p>
+    </div>
+
+    <script>
+        // Form Validation Example
+        function validateForm() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let dob = document.getElementById('dob').value;
+            let validationMessage = document.getElementById('validation-message');
+
+            if (name === '' || email === '' || dob === '') {
+                validationMessage.innerText = 'All fields are required!';
+            } else if (!/^[a-zA-Z]+$/.test(name)) {
+                validationMessage.innerText = 'Name should only contain letters!';
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                validationMessage.innerText = 'Please enter a valid email!';
+            } else {
+                validationMessage.innerText = 'Form submitted successfully!';
+                validationMessage.style.color = 'green';
+            }
+        }
+
+        // Arrays Example
+        function showArray() {
+            let fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Grapes'];
+            let arrayOutput = 'Fruits Array: ' + fruits.join(', ');
+            document.getElementById('array-result').innerText = arrayOutput;
+        }
+
+        // String Manipulation Example
+        function stringOperations() {
+            let str = document.getElementById('string-input').value;
+            let uppercase = str.toUpperCase();
+            let lowercase = str.toLowerCase();
+            let length = str.length;
+            let reverse = str.split('').reverse().join('');
+
+            let result = `Original String: ${str}\nUppercase: ${uppercase}\nLowercase: ${lowercase}\nLength: ${length}\nReversed: ${reverse}`;
+            document.getElementById('string-result').innerText = result;
+        }
+
+        // Date Function Example
+        function showCurrentDate() {
+            let currentDate = new Date();
+            let dateStr = currentDate.toDateString();
+            let timeStr = currentDate.toLocaleTimeString();
+
+            let result = `Current Date: ${dateStr}\nCurrent Time: ${timeStr}`;
+            document.getElementById('date-result').innerText = result;
+        }
+    </script>
+
+</body>
+</html>
